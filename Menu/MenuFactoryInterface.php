@@ -19,20 +19,6 @@ use Knp\Menu\FactoryInterface;
  */
 interface MenuFactoryInterface extends FactoryInterface
 {
-    /**
-     * Set current uri
-     *
-     * @param  string $currentUri
-     * @return MenuFactoryInterface
-     */
-    public function setCurrentUri($currentUri);
-
-    /**
-     * Get current uri
-     *
-     * @return string
-     */
-    public function getCurrentUri();
 
     /**
      * Set route params
@@ -50,7 +36,7 @@ interface MenuFactoryInterface extends FactoryInterface
      *     </code>
      * @return MenuFactoryInterface
      */
-    public function setRouteParams(array $routeParams);
+    public function setRouteParameters(array $routeParams);
 
     /**
      * Set default route parameters
@@ -65,7 +51,24 @@ interface MenuFactoryInterface extends FactoryInterface
      *             'nodeId' => 2,
      *         );
      *     </code>
-     * @return MenuFactory
+     * @return MenuFactoryInterface
      */
-    public function setDefaultRouteParams(array $defaultRouteParams);
+    public function setDefaultRouteParameters(array $defaultRouteParams);
+
+    /**
+     * Set extra parameters, the will set to all items on menu creation
+     *
+     * @param array $extra
+     *
+     * @example
+     *     <code>
+     *         $extra = array(
+     *             'translationParameters' => '',
+     *             'translationDomain' => '',
+     *         );
+     *     </code>
+     *
+     * @return MenuFactoryInterface
+     */
+    public function setDefaultExtraParameters(array $extra);
 }

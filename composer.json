@@ -8,7 +8,8 @@
         }
     ],
     "require": {
-        "knplabs/knp-menu-bundle": "1.1.*"
+        "knplabs/knp-menu-bundle": "1.1.*",
+        "zerkalica/millwright-configuration-bundle": "dev-master"
     },
     "autoload": {
         "psr-0": {

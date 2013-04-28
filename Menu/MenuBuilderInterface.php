@@ -23,14 +23,34 @@ interface MenuBuilderInterface
      * @param  Request $request
      * @param  array   $defaultRouteParams default route params for options
      * @param  array   $routeParams
-     * @see MenuFactoryInterface::setRouteParams()
-     * @see MenuFactoryInterface::setDefaultRouteParams()
+     * @param  array   $extra
+     *
+     * @see MenuFactoryInterface::setRouteParameters()
+     * @see MenuFactoryInterface::setDefaultRouteParameters()
+     *
      * @return MenuItemInterface
      */
     public function createMenu($name,
         array $defaultRouteParams = array(),
-        array $routeParams = array()
+        array $routeParams = array(),
+        array $extra = array()
     );
+
+    /**
+     * Create menu from options
+     *
+     * @param array $options menu container options
+     * @param array $defaultRouteParams  default route params for options
+     * @param array $extra
+     *
+     * @return MenuItemInterface
+     */
+    public function createMenuFromOptions(
+        array $options,
+        array $defaultRouteParams = array(),
+        array $extra = array()
+    );
+
 
     /**
      * Create single item without children (for menu link)
@@ -38,17 +58,12 @@ interface MenuBuilderInterface
      * @param  string  $name name of menu item
      * @param  array   $defaultRouteParams default route params for options
      * @param  array   $routeParams
-     * @see MenuFactoryInterface::setRouteParams()
-     * @see MenuFactoryInterface::setDefaultRouteParams()
+     * @param  array   $extra
+     *
+     * @see MenuFactoryInterface::setRouteParameters()
+     * @see MenuFactoryInterface::setDefaultRouteParameters()
+     *
      * @return MenuItemInterface
      */
-    public function createLink($name, array $routeParams = array());
-
-
-    /**
-     * Load cache
-     *
-     * @param string $cacheDir
-     */
-    public function loadCache($cacheDir);
+    public function createLink($name, array $routeParams = array(), array $extra = array());
 }

@@ -1,7 +1,11 @@
-vendor/*
 .DS_Store
 .idea
 .project
 .buildpath
 .eclipse
 .settings
+coverage
+phpunit.xml
+vendor
+composer.lock
+.~lock*
